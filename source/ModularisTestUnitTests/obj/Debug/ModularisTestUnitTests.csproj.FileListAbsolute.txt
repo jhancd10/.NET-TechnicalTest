@@ -1,0 +1,34 @@
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.dll.config
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.pdb
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\ModularisTest.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\ModularisTest.pdb
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csprojAssemblyReference.cache
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csproj.CoreCompileInputs.cache
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csproj.CopyComplete
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.dll
+D:\Modularis\Pruebas\Source\Logger Test\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.pdb
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.dll.config
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\ModularisTestUnitTests.pdb
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\ModularisTest.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\ModularisTest.pdb
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csproj.AssemblyReference.cache
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csproj.CoreCompileInputs.cache
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.csproj.CopyComplete
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.dll
+D:\Empresas\Modularis\Prueba-Tecnica\ModularisTestUnitTests\obj\Debug\ModularisTestUnitTests.pdb
