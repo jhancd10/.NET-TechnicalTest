@@ -1,6 +1,5 @@
 # C\#.NET - Technical Test
- Development of technical test where knowledge and mastery of C#.NET are evaluated.
- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Development of technical test where knowledge and mastery of C#.NET are evaluated.
 
 ## Test Description
 The code is used to log different messages throughout an application. We want to improve the source code by allowing: 
