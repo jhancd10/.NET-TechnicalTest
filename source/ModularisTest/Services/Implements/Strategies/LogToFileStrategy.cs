@@ -1,4 +1,5 @@
-﻿using ModularisTest.Models;
+﻿using ModularisTest.Exceptions;
+using ModularisTest.Models;
 using ModularisTest.Models.Enumerables;
 using ModularisTest.Services.Interfaces;
 using System;
@@ -21,20 +22,34 @@ namespace ModularisTest.Services.Implements.Strategies
             _logFullFilePath = logFullFilePath;
         }
 
-        public void LogMessage()
+        private string GetFileText()
         {
             string fileText = String.Empty;
 
-            if (File.Exists(_logFullFilePath))
+            //Verify if file exist and get the content
+            try
             {
                 fileText = File.ReadAllText(_logFullFilePath);
             }
 
+            //Create directory, so the file will be empty
+            catch (Exception)
+            {
+                Directory.CreateDirectory(_logFullFilePath);
+            }
+
+            //New text to add
             fileText += DateTime.Now.ToShortDateString() + " " + _message.GetMessageType() + " " + _message.Content + Environment.NewLine;
+            return fileText;
+        }
 
-            if (!Directory.Exists(_logFullFilePath)) Directory.CreateDirectory(_logFullFilePath);
+        public void LogMessage()
+        {
+            if (!_initialized) throw new JobLoggerNotInitializedException();
 
-            File.WriteAllText(_logFullFilePath, fileText);
+            //Get the text with new message to log into file
+            string text = GetFileText();
+            File.WriteAllText(_logFullFilePath, text);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ModularisTest.Models;
+﻿using ModularisTest.Exceptions;
+using ModularisTest.Models;
 using ModularisTest.Models.Enumerables;
 using ModularisTest.Services.Interfaces;
 using System;
@@ -19,7 +20,7 @@ namespace ModularisTest.Services.Implements.Strategies
 
         public void LogMessage()
         {
-            throw new NotImplementedException();
+            if (!_initialized) throw new JobLoggerNotInitializedException();
         }
     }
 }

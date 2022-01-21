@@ -20,23 +20,22 @@ namespace ModularisTest.Models
 
         public string GetMessageType()
         {
+            //Get properties from message depending its type
             string messageType = String.Empty;
 
             switch (_type)
             {
                 case Enumerables.MessageType.Message:
-                    messageType = "Error";
+                    messageType = Enum.GetName(typeof(Enumerables.MessageType), Enumerables.MessageType.Message);
                     Color = ConsoleColor.Red;
                     break;
                 case Enumerables.MessageType.Warning:
-                    messageType = "Warning";
+                    messageType = Enum.GetName(typeof(Enumerables.MessageType), Enumerables.MessageType.Warning);
                     Color = ConsoleColor.Yellow;
                     break;
                 case Enumerables.MessageType.Error:
-                    messageType = "Message";
+                    messageType = Enum.GetName(typeof(Enumerables.MessageType), Enumerables.MessageType.Error);
                     Color = ConsoleColor.White;
-                    break;
-                default:
                     break;
             }
 
