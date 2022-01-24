@@ -13,3 +13,6 @@ For this you should have into consideration the following:
 - Apply SOLID principles into the solution.
 - Apply the following design patterns: Singleton, Strategy.
 - Use dependency injection.
+
+# Development Explanation:
+https://youtu.be/gpoAaxpPDbU
