@@ -18,14 +18,14 @@ namespace ModularisTest.Services.Implements.Strategies
             _message = message;
         }
 
-        public void LogMessage()
+        public async Task LogMessage()
         {
             if (!_initialized) throw new JobLoggerNotInitializedException();
 
             //Log message to console
             string messageType =_message.GetMessageType();
             Console.ForegroundColor = _message.Color;
-            Console.WriteLine(DateTime.Now.ToShortDateString() + " " + messageType + " " + _message.Content);
+            await Task.Run(() => Console.WriteLine(DateTime.Now.ToShortDateString() + " " + messageType + " " + _message.Content));
         }
     }
 }

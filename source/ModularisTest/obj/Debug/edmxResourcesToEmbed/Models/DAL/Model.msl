@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LocalModelStoreContainer" CdmEntityContainer="LocalEntities">
+    <EntitySetMapping Name="MESSAGE_COLORS">
+      <EntityTypeMapping TypeName="LocalModel.MESSAGE_COLORS">
+        <MappingFragment StoreEntitySet="MESSAGE_COLORS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESSAGE_TYPES">
+      <EntityTypeMapping TypeName="LocalModel.MESSAGE_TYPES">
+        <MappingFragment StoreEntitySet="MESSAGE_TYPES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="COLOR_ID" ColumnName="COLOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MESSAGES">
+      <EntityTypeMapping TypeName="LocalModel.MESSAGES">
+        <MappingFragment StoreEntitySet="MESSAGES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

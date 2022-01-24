@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LocalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MESSAGE_COLORS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="COLOR" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="COLOR_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONTENT" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="DATE" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="MESSAGE_TYPES_COLOR">
+          <End Role="MESSAGE_COLORS" Type="Self.MESSAGE_COLORS" Multiplicity="1" />
+          <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESSAGE_COLORS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MESSAGE_TYPES">
+              <PropertyRef Name="COLOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MESSAGES_MESSAGE_TYPES">
+          <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="1" />
+          <End Role="MESSAGES" Type="Self.MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESSAGE_TYPES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MESSAGES">
+              <PropertyRef Name="TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LocalModelStoreContainer">
+          <EntitySet Name="MESSAGE_COLORS" EntityType="Self.MESSAGE_COLORS" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+          <EntitySet Name="MESSAGE_TYPES" EntityType="Self.MESSAGE_TYPES" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+          <EntitySet Name="MESSAGES" EntityType="Self.MESSAGES" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+          <AssociationSet Name="MESSAGE_TYPES_COLOR" Association="Self.MESSAGE_TYPES_COLOR">
+            <End Role="MESSAGE_COLORS" EntitySet="MESSAGE_COLORS" />
+            <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+          </AssociationSet>
+          <AssociationSet Name="MESSAGES_MESSAGE_TYPES" Association="Self.MESSAGES_MESSAGE_TYPES">
+            <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+            <End Role="MESSAGES" EntitySet="MESSAGES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LocalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MESSAGE_COLORS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="COLOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="MESSAGE_TYPES" Relationship="Self.MESSAGE_TYPES_COLOR" FromRole="MESSAGE_COLORS" ToRole="MESSAGE_TYPES" />
+        </EntityType>
+        <EntityType Name="MESSAGE_TYPES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COLOR_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="MESSAGE_COLORS" Relationship="Self.MESSAGE_TYPES_COLOR" FromRole="MESSAGE_TYPES" ToRole="MESSAGE_COLORS" />
+          <NavigationProperty Name="MESSAGES" Relationship="Self.MESSAGES_MESSAGE_TYPES" FromRole="MESSAGE_TYPES" ToRole="MESSAGES" />
+        </EntityType>
+        <EntityType Name="MESSAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="MESSAGE_TYPES" Relationship="Self.MESSAGES_MESSAGE_TYPES" FromRole="MESSAGES" ToRole="MESSAGE_TYPES" />
+        </EntityType>
+        <Association Name="MESSAGE_TYPES_COLOR">
+          <End Role="MESSAGE_COLORS" Type="Self.MESSAGE_COLORS" Multiplicity="1" />
+          <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESSAGE_COLORS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MESSAGE_TYPES">
+              <PropertyRef Name="COLOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MESSAGES_MESSAGE_TYPES">
+          <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="1" />
+          <End Role="MESSAGES" Type="Self.MESSAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESSAGE_TYPES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MESSAGES">
+              <PropertyRef Name="TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LocalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MESSAGE_COLORS" EntityType="Self.MESSAGE_COLORS" />
+          <EntitySet Name="MESSAGE_TYPES" EntityType="Self.MESSAGE_TYPES" />
+          <EntitySet Name="MESSAGES" EntityType="Self.MESSAGES" />
+          <AssociationSet Name="MESSAGE_TYPES_COLOR" Association="Self.MESSAGE_TYPES_COLOR">
+            <End Role="MESSAGE_COLORS" EntitySet="MESSAGE_COLORS" />
+            <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+          </AssociationSet>
+          <AssociationSet Name="MESSAGES_MESSAGE_TYPES" Association="Self.MESSAGES_MESSAGE_TYPES">
+            <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+            <End Role="MESSAGES" EntitySet="MESSAGES" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LocalModelStoreContainer" CdmEntityContainer="LocalEntities">
+          <EntitySetMapping Name="MESSAGE_COLORS">
+            <EntityTypeMapping TypeName="LocalModel.MESSAGE_COLORS">
+              <MappingFragment StoreEntitySet="MESSAGE_COLORS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGE_TYPES">
+            <EntityTypeMapping TypeName="LocalModel.MESSAGE_TYPES">
+              <MappingFragment StoreEntitySet="MESSAGE_TYPES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="COLOR_ID" ColumnName="COLOR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGES">
+            <EntityTypeMapping TypeName="LocalModel.MESSAGES">
+              <MappingFragment StoreEntitySet="MESSAGES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

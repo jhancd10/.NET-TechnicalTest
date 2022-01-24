@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MESSAGE_COLORS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="COLOR" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESSAGE_TYPES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="COLOR_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MESSAGES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CONTENT" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TYPE_ID" Type="int" Nullable="false" />
+    <Property Name="DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="MESSAGE_TYPES_COLOR">
+    <End Role="MESSAGE_COLORS" Type="Self.MESSAGE_COLORS" Multiplicity="1" />
+    <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESSAGE_COLORS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MESSAGE_TYPES">
+        <PropertyRef Name="COLOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MESSAGES_MESSAGE_TYPES">
+    <End Role="MESSAGE_TYPES" Type="Self.MESSAGE_TYPES" Multiplicity="1" />
+    <End Role="MESSAGES" Type="Self.MESSAGES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MESSAGE_TYPES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MESSAGES">
+        <PropertyRef Name="TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LocalModelStoreContainer">
+    <EntitySet Name="MESSAGE_COLORS" EntityType="Self.MESSAGE_COLORS" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+    <EntitySet Name="MESSAGE_TYPES" EntityType="Self.MESSAGE_TYPES" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+    <EntitySet Name="MESSAGES" EntityType="Self.MESSAGES" Schema="MESSAGES_SCHEMA" store:Type="Tables" />
+    <AssociationSet Name="MESSAGE_TYPES_COLOR" Association="Self.MESSAGE_TYPES_COLOR">
+      <End Role="MESSAGE_COLORS" EntitySet="MESSAGE_COLORS" />
+      <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+    </AssociationSet>
+    <AssociationSet Name="MESSAGES_MESSAGE_TYPES" Association="Self.MESSAGES_MESSAGE_TYPES">
+      <End Role="MESSAGE_TYPES" EntitySet="MESSAGE_TYPES" />
+      <End Role="MESSAGES" EntitySet="MESSAGES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

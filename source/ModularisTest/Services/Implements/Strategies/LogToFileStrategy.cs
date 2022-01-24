@@ -13,43 +13,22 @@ namespace ModularisTest.Services.Implements.Strategies
 {
     public class LogToFileStrategy : LogBase, ILogger
     {
-        private readonly string _logFullFilePath;
+        private PathFile _instanceSingletonPathFile;
 
-        public LogToFileStrategy(Message message, string logFullFilePath)
+        public LogToFileStrategy(Message message)
         {
             _initialized = true;
             _message = message;
-            _logFullFilePath = logFullFilePath;
+            _instanceSingletonPathFile = PathFile.InstanceSingleton;
         }
 
-        private string GetFileText()
-        {
-            string fileText = String.Empty;
-
-            //Verify if file exist and get the content
-            try
-            {
-                fileText = File.ReadAllText(_logFullFilePath);
-            }
-
-            //Create directory, so the file will be empty
-            catch (Exception)
-            {
-                Directory.CreateDirectory(_logFullFilePath);
-            }
-
-            //New text to add
-            fileText += DateTime.Now.ToShortDateString() + " " + _message.GetMessageType() + " " + _message.Content + Environment.NewLine;
-            return fileText;
-        }
-
-        public void LogMessage()
+        public async Task LogMessage()
         {
             if (!_initialized) throw new JobLoggerNotInitializedException();
 
             //Get the text with new message to log into file
-            string text = GetFileText();
-            File.WriteAllText(_logFullFilePath, text);
+            string text = _instanceSingletonPathFile.GetFileText(_message);
+            await _instanceSingletonPathFile.SaveFileText(text);
         }
     }
 }

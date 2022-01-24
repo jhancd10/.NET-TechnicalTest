@@ -9,3 +9,16 @@ D:\Empresas\Modularis\Prueba-Tecnica\ModularisTest\obj\Debug\ModularisTest.cspro
 D:\Empresas\Modularis\Prueba-Tecnica\ModularisTest\obj\Debug\ModularisTest.csproj.CoreCompileInputs.cache
 D:\Empresas\Modularis\Prueba-Tecnica\ModularisTest\obj\Debug\ModularisTest.dll
 D:\Empresas\Modularis\Prueba-Tecnica\ModularisTest\obj\Debug\ModularisTest.pdb
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\ModularisTest.dll.config
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\ModularisTest.dll
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\ModularisTest.pdb
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\EntityFramework.dll
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\System.ValueTuple.dll
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\EntityFramework.xml
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\EntityFramework.SqlServer.xml
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\bin\Debug\System.ValueTuple.xml
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.csproj.CoreCompileInputs.cache
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.csproj.CopyComplete
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.dll
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.pdb

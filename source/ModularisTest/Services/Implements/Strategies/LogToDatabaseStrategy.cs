@@ -1,6 +1,7 @@
 ﻿using ModularisTest.Exceptions;
 using ModularisTest.Models;
 using ModularisTest.Models.Enumerables;
+using ModularisTest.Services.Implements.DAL;
 using ModularisTest.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,11 @@ namespace ModularisTest.Services.Implements.Strategies
             _message = message;
         }
 
-        public void LogMessage()
+        public async Task LogMessage()
         {
             if (!_initialized) throw new JobLoggerNotInitializedException();
+
+            await MessagesService.InstanceSingleton.Add(_message);
         }
     }
 }
