@@ -22,3 +22,4 @@ D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\Modulari
 D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.csproj.CopyComplete
 D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.dll
 D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.pdb
+D:\Empresas\Modularis\.NET-TechnicalTest\source\ModularisTest\obj\Debug\ModularisTest.csproj.AssemblyReference.cache
